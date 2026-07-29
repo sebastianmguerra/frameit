@@ -15,21 +15,30 @@ With a single click or spacebar press, you can lock your camera frame while you 
 ## Requirements
 
 - **OS:** Windows 10/11
-- **Python:** 3.8+
-- **Virtual Camera Driver:** [Unity Capture](https://github.com/schellingb/UnityCapture) (included setup script makes installation a breeze)
+- **Virtual Camera Driver:** [Unity Capture](https://github.com/schellingb/UnityCapture) (SnapCam includes a built-in setup button for this!)
 
 ## Installation
 
+### Method 1: Windows Installer (Recommended)
+
+The easiest way to get started is to use the standalone installer wizard:
+1. Download `SnapCam_Setup_v1.0.exe` from the latest release.
+2. Double-click to run the setup wizard.
+3. Once installed, launch SnapCam from your Start Menu or Desktop!
+
+### Method 2: Run from Source (For Developers)
+
+If you prefer to run the raw Python code:
 1. Clone or download this repository.
-2. Install the Python dependencies:
+2. Ensure you have Python 3.8+ installed.
+3. Install the dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-3. Run the application:
+4. Run the application:
    ```bash
    python main.py
    ```
-   *Alternatively, double-click `run.bat`.*
 
 ## Virtual Camera Setup
 
