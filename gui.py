@@ -1,6 +1,5 @@
 import os
 import sys
-import time
 import subprocess
 import tkinter as tk
 from tkinter import filedialog, messagebox
@@ -283,7 +282,14 @@ class SnapCamGUI(ctk.CTk):
                 "Virtual camera is not yet registered.\n\nClick '⚡ Register VCam Driver' or run 'install_vcam_driver.bat' as Administrator.")
 
     def on_install_vcam_driver(self):
-        bat_path = os.path.abspath("install_vcam_driver.bat")
+        # Resolve path for PyInstaller bundle
+        if hasattr(sys, '_MEIPASS'):
+            base_dir = sys._MEIPASS
+        else:
+            base_dir = os.path.abspath(os.path.dirname(__file__))
+            
+        bat_path = os.path.join(base_dir, "install_vcam_driver.bat")
+        
         if os.path.exists(bat_path):
             try:
                 subprocess.Popen(['cmd.exe', '/c', 'start', '', bat_path], shell=True)
